@@ -4,6 +4,8 @@
 
 uin-app + vue3 + ts + vite 搭建的项目模板
 
+1.需要node16++版本，因为lint-staged 需要16+才支持
+
 ### 启动
 
 安装
