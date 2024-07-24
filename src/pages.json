@@ -57,33 +57,77 @@
 			{
 				"text": "书架",
 				"pagePath": "pages/bookshelf/bookshelf",
-				"iconPath": "static/tabs/user_default.png",
-				"selectedIconPath": "static/tabs/user_selected.png"
+				"iconPath": "static/bookshelf/shujia.png",
+				"selectedIconPath": "static/bookshelf/shuchengSelected.png"
 			},
 			{
 				"text": "发现",
 				"pagePath": "pages/discover/discover",
-				"iconPath": "static/tabs/user_default.png",
-				"selectedIconPath": "static/tabs/user_selected.png"
+				"iconPath": "static/bookshelf/faxian.png",
+				"selectedIconPath": "static/bookshelf/faxianSelected.png"
 			},
 			{
 				"text": "书城",
 				"pagePath": "pages/bookstore/bookstore",
-				"iconPath": "static/tabs/user_default.png",
-				"selectedIconPath": "static/tabs/user_selected.png"
+				"iconPath": "static/bookshelf/shucheng.png",
+				"selectedIconPath": "static/bookshelf/shuchengSelected.png"
 			},
 			{
 				"text": "member",
 				"pagePath": "pages/member/member",
-				"iconPath": "static/tabs/user_default.png",
-				"selectedIconPath": "static/tabs/user_selected.png"
+				"iconPath": "static/bookshelf/huiyuan.png",
+				"selectedIconPath": "static/bookshelf/huiyuanSelected.png"
 			},
 			{
 				"text": "我的",
 				"pagePath": "pages/my/index",
-				"iconPath": "static/tabs/user_default.png",
-				"selectedIconPath": "static/tabs/user_selected.png"
+				"iconPath": "static/bookshelf/mine.png",
+				"selectedIconPath": "static/bookshelf/mineSelected.png"
 			}
 		]
+	},
+	"subPackages": [
+		{
+			"root": "subpackage/bookshelf/rewards",
+			"pages": [
+				{
+					"path": "rewardsPage/rewardsPage",
+					"style": {
+						"navigationBarTitleText": "rewardsPage"
+					}
+				}
+			]
+		},
+		{
+			"root": "subpackage/bookshelf/moreFeatures",
+			"pages": [
+				{
+					"path": "importLocal/importLocal",
+					"style": {
+						"navigationBarTitleText": "importLocal"
+					}
+				},
+				{
+					"path": "myBooks/myBooks",
+					"style": {
+						"navigationBarTitleText": "myBooks"
+					}
+				},
+				{
+					"path": "wlanTransfer/wlanTransfer",
+					"style": {
+						"navigationBarTitleText": "wlanTransfer"
+					}
+				}
+			]
+		}
+	],
+	"preloadRule": {
+		"pages/index/index": {
+			"network": "all",
+			"packages": [
+				"subpackage/bookshelf"
+			]
+		}
 	}
 }
