@@ -93,7 +93,7 @@
 				{
 					"path": "rewardsPage/rewardsPage",
 					"style": {
-						"navigationBarTitleText": "rewardsPage"
+						"navigationBarTitleText": "福利中心"
 					}
 				}
 			]
@@ -123,10 +123,11 @@
 		}
 	],
 	"preloadRule": {
-		"pages/index/index": {
+		"pages/bookshelf/bookshelf": {
 			"network": "all",
 			"packages": [
-				"subpackage/bookshelf"
+				"subpackage/bookshelf/moreFeatures",
+				"subpackage/bookshelf/rewards"
 			]
 		}
 	}

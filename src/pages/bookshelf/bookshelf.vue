@@ -126,7 +126,7 @@ const onSearch = () => {
 }
 
 const onSignin = () => {
-  console.log('签到')
+  uni.navigateTo({ url: '/subpackage/bookshelf/rewards/rewardsPage/rewardsPage' })
 }
 
 const onFilter = () => {
