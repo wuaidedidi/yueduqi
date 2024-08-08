@@ -1,6 +1,6 @@
 import { useUserStore } from '@/stores'
 
-const baseURL = import.meta.env.VITE_HTTP
+const baseURL = import.meta.env.VITE_BOOK_HTTP
 
 // 拦截器配置
 const httpInterceptor = {
@@ -16,6 +16,7 @@ const httpInterceptor = {
       'request-client': 'wechart-app',
       ...options.header,
     }
+
     // 添加 token 请求头标识
     const memberStore = useUserStore()
     const token = memberStore.userInfo?.token
@@ -37,34 +38,31 @@ uni.addInterceptor('uploadFile', httpInterceptor)
  */
 // Data类型根据后台返回数据去定义
 type Data<T> = {
-  code: string
-  msg: string
-  result: T
+  status: number
+  message: string
+  data: T
 }
-export const http = <T>(options: UniApp.RequestOptions) => {
+// 修改 http 函数定义
+export const http = <T>(options: UniApp.RequestOptions & { data?: Record<string, any> }) => {
   return new Promise<Data<T>>((resolve, reject) => {
     uni.request({
       ...options,
-      // 响应成功
       success(res) {
         if (res.statusCode >= 200 && res.statusCode < 300) {
           resolve(res.data as Data<T>)
         } else if (res.statusCode === 401) {
-          // 401错误  -> 清理用户信息，跳转到登录页
           const userStore = useUserStore()
           userStore.clearUserInfo()
           uni.navigateTo({ url: '/pages/login' })
           reject(res)
         } else {
-          // 其他错误 -> 根据后端错误信息轻提示
           uni.showToast({
             icon: 'none',
-            title: (res.data as Data<T>).msg || '请求错误',
+            title: (res.data as Data<T>).message || '请求错误',
           })
           reject(res)
         }
       },
-      // 响应失败
       fail(err) {
         uni.showToast({
           icon: 'none',
