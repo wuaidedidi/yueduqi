@@ -54,7 +54,7 @@
             duration="500"
             easing-function="easeOutCubic"
             @change="swiperChange"
-          >
+            @tap="bookHandle">
             <swiper-item>
               <image src="@/static/bookshelf/lunbo/book1.jpg" class="book-cover"></image>
             </swiper-item>
@@ -86,6 +86,7 @@
 </template>
 
 <script lang="ts" setup>
+import { onLoad } from '@dcloudio/uni-app'
 import { computed } from 'vue'
 import { ref, nextTick } from 'vue'
 
@@ -122,7 +123,7 @@ const books = ref([
 ])
 
 const onSearch = () => {
-  console.log('搜索')
+  uni.navigateTo({ url: '/subpackage/bookshelf/bookSearch/search/search' })
 }
 
 const onSignin = () => {
@@ -216,6 +217,9 @@ const onHuadongImageTap2 = (event: Event) => {
 }
 const cuxiaoClick = () => {
   console.log('促销')
+}
+const bookHandle = () => {
+  uni.navigateTo({ url: '/subpackage/bookshelf/bookContent/content/content' })
 }
 </script>
 
