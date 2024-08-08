@@ -120,6 +120,28 @@
 					}
 				}
 			]
+		},
+		{
+			"root": "subpackage/bookshelf/bookSearch",
+			"pages": [
+				{
+					"path": "search/search",
+					"style": {
+						"navigationBarTitleText": "search"
+					}
+				}
+			]
+		},
+		{
+			"root": "subpackage/bookshelf/bookContent",
+			"pages": [
+				{
+					"path": "content/content",
+					"style": {
+						"navigationBarTitleText": "content"
+					}
+				}
+			]
 		}
 	],
 	"preloadRule": {
