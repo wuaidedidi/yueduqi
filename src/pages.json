@@ -142,6 +142,29 @@
 					}
 				}
 			]
+		},
+		{
+			"root": "subpackage/bookSourceSearch",
+			"pages": [
+				{
+					"path": "sourceSearch/sourceSearch",
+					"style": {
+						"navigationBarTitleText": "sourceSearch"
+					}
+				},
+				{
+					"path": "bookList/bookList",
+					"style": {
+						"navigationBarTitleText": "bookList"
+					}
+				},
+				{
+					"path": "bookDetail/bookDetail",
+					"style": {
+						"navigationBarTitleText": "bookDetail"
+					}
+				}
+			]
 		}
 	],
 	"preloadRule": {
