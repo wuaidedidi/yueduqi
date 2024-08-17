@@ -22,3 +22,10 @@ export const getChapterContentAPI = async (fileName: string, chapterId: string, 
     },
   })
 }
+// 获取书源的 API 调用
+export const getbookSourceDataApi = async () => {
+  return http<string>({
+    url: '/api/bookSource',
+    method: 'POST',
+  })
+}
